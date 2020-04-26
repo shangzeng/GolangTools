@@ -22,8 +22,8 @@ go get github.com/360EntSecGroup-Skylar/excelize
 编辑 fofa_go_1.1.go 填写API与email
 
 ```
-	email    =  "xxxxxxxxxxxxxxxxx"
-	api_key  =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+email    =  "xxxxxxxxxxxxxxxxx"
+api_key  =  "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
 执行
@@ -47,7 +47,7 @@ go build fofa_go_1.1.go
 GOOS="linux" GOARCH="amd64" go build -ldflags "-w -s" fofa_go_1.1.go
 ```
 
-编译常见linux使用的版本：
+编译常见windows使用的版本：
 
 ```
 GOOS="windows" GOARCH="amd64" go build -ldflags "-w -s" fofa_go_1.1.go
@@ -75,6 +75,10 @@ GOOS="windows" GOARCH="amd64" go build -ldflags "-w -s" fofa_go_1.1.go
 3. 老八一样的代码需要优化
 4. 与xray进行联动进行主动扫描
 
+
+## 更多
+
+[shangzeng's blog ](http://www.shangzeng.club)
 
 
 
