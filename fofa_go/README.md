@@ -78,7 +78,7 @@ GOOS="windows" GOARCH="amd64" go build -ldflags "-w -s" fofa_go_1.1.go
 
 ## 更多
 
-[shangzeng's blog ](http://www.shangzeng.club)
+[shangzeng's blog ](https://www.shangzeng.club)
 
 
 
