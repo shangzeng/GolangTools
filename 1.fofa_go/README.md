@@ -19,7 +19,7 @@ go get github.com/360EntSecGroup-Skylar/excelize
 ```
 
 
-编辑 fofa_go_1.1.go 填写API与email
+编辑 config.json 填写API与email
 
 ```
 email    =  "xxxxxxxxxxxxxxxxx"
@@ -55,15 +55,8 @@ GOOS="windows" GOARCH="amd64" go build -ldflags "-w -s" fofa_go_1.1.go
 
 ## 使用说明
 
-输出方式：
+自行查看帮助，注意转译
 
-1. -t 在运行目录生成txt文件，只包含ip网址
-2. -e 在运行目录生成excle文件，包含ip,域名，标题，城市等详细信息
-3. 没有上上述参数默认输出到命令行中，以上参数可以重复使用
-
-注意事项：
-
-1. -q 后接搜索内容中的特殊符号需要转译，比如双引号，空格等等符号
 
 
 
@@ -71,7 +64,7 @@ GOOS="windows" GOARCH="amd64" go build -ldflags "-w -s" fofa_go_1.1.go
 ## 待完成
 
 1. win编译后输出字体颜色缺失
-2. 目前只实践过普通会员（100条）
+2. 目前只能下载前一万条（因为没有币子做实验下载，呜呜呜）
 3. 老八一样的代码需要优化
 4. 与xray进行联动进行主动扫描
 
