@@ -16,5 +16,5 @@ go build -ldflags "-w -s" ncshell.go
 
 静态查杀效果（目前是360，火绒免杀）
 
-![](WechatIMG4024.png)
+![virustotal](https://github.com/shangzeng/GolangTools/blob/master/4.ncshell/WechatIMG4024.png)
 
