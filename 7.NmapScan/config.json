@@ -1,0 +1,10 @@
+{
+    "ipfile"      : "iplist/iplist.txt",
+    "nmapports": "21,22,23,25,53,80,81,110",
+    "nmapthreads" : 2,
+    "nmaptimeout" : 5,
+
+
+    "nmapresults" : "iplist/result.txt",
+    "nmapresultfile"  : "iplist/result.xlsx"
+}
