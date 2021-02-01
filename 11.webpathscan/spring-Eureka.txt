@@ -1,0 +1,13 @@
+/autoconfig
+/beans
+/configprops
+/dump
+/health
+/info
+/mappings
+/metrics
+/trace
+/jolokia/list
+/env
+/actuator/env
+/actuator
