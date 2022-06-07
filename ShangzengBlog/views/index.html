@@ -1,0 +1,72 @@
+{{ template "head.html" . }}
+<div class="main-content clearfix onelist-page">
+    <div class="post-lists">
+        <div class="post-lists-body">
+
+            {{range $index, $elem := .Data}}
+            <div class="post-onelist-item">
+                <div class="post-onelist-item-container">
+
+
+                    <div class="onelist-item-info">
+                        <div class="item-title">
+                            <a class="post-item-title" href="/article/{{$elem.Name}}.html">
+                                {{$elem.ArcName}}
+                            </a>
+                        </div>
+
+                        <div class="item-meta">
+                                <span class="item-meta-time">
+                                    <i class="fa fa-calendar-o"></i> 发表于
+                                    <time datetime="{{$elem.Time}}" itemprop="datePublished">
+                                        {{$elem.Time}}
+                                    </time>
+                                </span>
+                            <span class="item-mete-category">
+                                    <span class="post-meta-divider">|</span>
+                                    <i class="fa fa-folder-o"></i>
+                                    <a class="item-category" href="/categories/{{$elem.Tag}}.html">
+                                        {{$elem.Tag}}
+                                    </a>
+                                </span>
+                            <span class="item-meta-comment">
+                                    <span class="post-meta-divider">|</span>
+                                    <i class="fa fa-comment-o"></i>
+                                    comment...
+                                </span>
+                        </div>
+
+                        <div class="item-meta-hr bg-deepgrey"></div>
+
+                        <div class="item-content">
+                            <p>{{$elem.Information}}</p>
+                        </div>
+
+                        <div class="item-readmore"><a href="/article/{{$elem.Name}}.html"> Read more  →</a></div>
+                    </div>
+                </div>
+            </div>
+            {{end}}
+
+        </div>
+    </div>
+
+    <div class="lists-navigator clearfix">
+        <ol class="page-navigator">
+            {{if gt .CurrentPage 1}}
+            <li class="prev"><a href="/?page={{sub .CurrentPage}}">←</a></li>
+            {{end}}
+            <!--
+            <li class="current">
+                <a href="javascript:">
+                    {{.CurrentPage}} / {{.Len}}
+
+                </a>
+            </li>
+            <li class="next"><a href="/?page=">→</a></li>
+            -->
+        </ol>
+    </div>
+</div>
+
+{{ template "foot.html" . }}

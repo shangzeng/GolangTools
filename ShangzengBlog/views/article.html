@@ -1,0 +1,85 @@
+{{ template "head.html" . }}
+<div class="main-content clearfix onelist-page">
+    <article class="main-content page-page" itemscope>
+        <div class="post-header">
+            <h1 class="post-title" itemprop="name headline">
+                {{.Title}}
+            </h1>
+
+            <div class="post-data">
+                <span class="item-meta-time">
+                    <i class="fa fa-calendar-o"></i> 发表于
+                    <time datetime="{{.Time}}" itemprop="datePublished">
+                        {{.Time}}
+                    </time>
+                </span>
+
+                <span class="item-mete-category">
+                    <span class="post-meta-divider">|</span>
+                    <i class="fa fa-folder-o"></i>
+                    <a class="item-category" href="/categories/{{.Tag}}.html">
+                       {{.Tag}}
+                    </a>
+                </span>
+
+                <span class="item-meta-comment">
+                    <span class="post-meta-divider">|</span>
+                    <i class="fa fa-comment-o"></i>
+                    comment...
+                </span>
+            </div>
+
+            <div class="post-data-excerpt">
+                {{.Information}}
+            </div>
+        </div>
+        <div id="post-content" class="post-content" itemprop="articleBody">
+
+            {{ str2html .Content }}
+
+            <div>
+                <ul class="post-copyright">
+                    <li class="post-copyright-author">
+                        <strong>本文作者： </strong> shangzeng
+                    </li>
+                    <!--<li class="post-copyright-link">
+                        <strong>本文链接：</strong>
+                        <a href="https://wangkekai.cn/article/这里文章标签" title="{{.info.Title}}">https://wangkekai.cn/article/这里文章标签</a>
+                    </li>-->
+                    <li class="post-copyright-license">
+                        <strong>版权声明： </strong>
+                        本博客所有文章除特别声明外，均采用「 <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="external nofollow">知识共享署名4.0</a> 」创作共享协议，转载请注明作者及原网址。
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <footer class="post-footer">
+            <p class="post-tags">
+
+                    <a href="/categories/{{.Tag}}.html">
+                        {{.Tag}}
+                    </a>
+
+            </p>
+            <div class="post-nav">
+
+                    <div class="post-nav-next post-nav-item">
+                        <a href="/article/这里文章标签" rel="next" title="上一片文章">
+                            <i class="fa fa-chevron-left"></i> 上一片文章
+                        </a>
+                    </div>
+
+                <span class="post-nav-divider"></span>
+
+                    <div class="post-nav-prev post-nav-item">
+                        <a href="/article/下一个" rel="prev" title="下一篇文章">
+                            下一篇文章
+                            <i class="fa fa-chevron-right"></i>
+                        </a>
+                    </div>
+
+            </div>
+        </footer>
+    </article>
+</div>
+{{ template "foot.html" . }}

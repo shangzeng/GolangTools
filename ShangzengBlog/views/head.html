@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title> {{.Title}} </title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=2">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="stylesheet" href="/static/css/font-awesome.min.css" />
+
+    <meta name="description" content={{.Title}}>
+    <meta name="keywords" content=" hacker ">
+    <meta name="description" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content={{.Title}}>
+    <meta property="og:url" content="">
+    <meta property="og:url" content="">
+    <meta property="og:site_name" content={{.Title}}>
+    <meta property="og:description" content={{.Title}}>
+    <meta property="og:locale" content="zh-CN">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content={{.Title}}>
+    <meta name="twitter:description" content={{.Title}}>
+    <link rel="canonical" href="">
+    <link rel="canonical" href="">
+    <title>Shangzeng's blog</title>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="headband"></div>
+    <div class="navbar-container">
+        <a href="/" class="navbar-logo">
+            ShangZeng
+        </a>
+        <div class="navbar-menu">
+            {{/*            <a href="/archives.html">归档</a>*/}}
+            <a href="/page/about.html"><i class="fa fa-user"></i> About Me</a>
+            <a href="/page/links.html"><i class="fa fa-link" aria-hidden="true"></i> Friends </a>
+            <a href="/feed"><i class="fa fa-snowflake-o" aria-hidden="true"></i> Rss </a>
+        </div>
+        {{/*            <div class="navbar-search" onclick=""><span class="icon-search"></span>*/}}
+        {{/*                <form id="search" method="post" action="/" role="search">*/}}
+            {{/*                    <span class="search-box">*/}}
+{{/*                        <input type="text" class="input" name="s" required="true" placeholder="Search..." maxlength="30" autocomplete="off">*/}}
+{{/*                    </span>*/}}
+            {{/*                </form>*/}}
+        {{/*            </div>*/}}
+        <div class="navbar-mobile-menu" onclick="">
+            <span class="icon-menu cross"><span class="middle"></span></span>
+            <ul>
+                <a href="/page/about.html">About Me</a>
+                <a href="/page/links.html">友链</a>
+                <a href="/dnslog">DNSlog</a>
+            </ul>
+        </div>
+    </div>
+</header>

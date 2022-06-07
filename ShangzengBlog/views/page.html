@@ -1,0 +1,14 @@
+{{ template "head.html" . }}
+<div class="main-content clearfix onelist-page">
+    <article class="main-content page-page" itemscope itemtype="">
+        <div class="post-header">
+
+            <img style="width: 100px;" src="/static/img/image.png" />
+
+            <h1 class="post-title" itemprop="name headline"></h1></div>
+            <div id="post-content" class="post-content" itemprop="articleBody">
+                {{str2html .Content}}
+            </div>
+    </article>
+</div>
+{{ template "foot.html" . }}

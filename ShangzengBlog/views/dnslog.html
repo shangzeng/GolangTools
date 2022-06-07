@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>DNSLog</title>
+    <meta name="keywords" content="dnslog"/>
+    <meta name="description" content="dnslog"/>
+
+
+</head>
+<body>
+<div id=header style="text-align:center">
+    <hr style=" height:2px;border:none;border-top:2px dashed #87CEFA;"/>
+    <br>
+</div>
+<div style="text-align:center;" id="app">
+    <button type="button" onclick="myFunctiontwo()">换个DNS</button>
+    <button type="button" onclick="myFunction()">刷新记录</button>
+    <br><br>
+    <div id="myDomain">&nbsp;{{.Domainname}}.ft0fe6.ceye.io </div>
+    <br>
+    <center>
+        <table id="myRecords" width=700 border="0" cellpadding="5" cellspacing="1" bgcolor="#EFF3FF"
+               style="word-break:break-all; word-wrap:break-all;">
+            <tr bgcolor="#ADD3EF">
+                <th width="50%">DNS返回域名</th>
+                <th width="25%">IP 地址</th>
+                <th width="25%">创建时间</th>
+            </tr>
+            {{range $index, $elem := .DomainInfo}}
+            <tr v-for="item in DnsData">
+                <td>{{$elem.Name}}</td>
+                <td>{{$elem.RemoteAddr}}</td>
+                <td>{{$elem.CreatedAt}}</td>
+            </tr>
+            {{end}}
+        </table>
+    </center>
+</div>
+</body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div id=footer>
+    <hr style=" height:2px;border:none;border-top:2px dashed #87CEFA;"/>
+    <br>
+    <center><span style="color:#ADD3EF">DNSLog</span></center>
+</div>
+<script>
+    function myFunction()
+    {
+        window.location.replace("/dnslog?token={{.Token}}&domainname={{.Domainname}}");
+    }
+    function myFunctiontwo()
+    {
+        window.location.replace("/dnslog?token={{.Token}}");
+    }
+</script>
+</html>
